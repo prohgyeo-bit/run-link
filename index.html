@@ -2,21 +2,27 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Run Macro</title>
+<title>Run</title>
 
 <script>
-function runMacro() {
-    // MacroDroid 인텐트 실행
-    window.location.href = "intent://run_macro#Intent;scheme=macrodroid;end;";
+function run() {
+    // 1차: 자동 실행 시도
+    window.location.href = "intent:#Intent;action=run_macro;package=com.arlosoft.macrodroid;end;";
 }
+
+// 자동 실행 시도
+window.onload = function() {
+    run();
+};
 </script>
 
 </head>
 
-<body onclick="runMacro()" 
+<body onclick="run()" 
       style="text-align:center; margin-top:100px; font-size:24px;">
 
-👉 화면 아무데나 터치하면 매크로 실행
+자동 실행 시도 중...<br><br>
+👉 안되면 화면 터치
 
 </body>
 </html>
